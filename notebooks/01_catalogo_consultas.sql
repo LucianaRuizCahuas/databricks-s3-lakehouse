@@ -1,13 +1,14 @@
 -- Databricks notebook source
 -- Actividad: catalog.schema.tabla, capas Silver y Gold.
--- Estado: codigo preparado; ejecutar en el workspace y guardar resultados.
--- Este notebook usa datos de muestra. La conexion real S3 esta en 02_s3.py.
+-- Ejecutado el 22/10/2026; resultados en evidencias/sql_*.json.
+-- Fuente NYC Taxi. Tablas Delta administradas realmente en Amazon S3.
+-- 02_s3.py es una alternativa opcional para una fuente externa S3 propia.
 CREATE CATALOG IF NOT EXISTS actividad_luciana;
 CREATE SCHEMA IF NOT EXISTS actividad_luciana.silver;
 CREATE SCHEMA IF NOT EXISTS actividad_luciana.gold;
 
 -- COMMAND ----------
--- Tabla de demostracion: NO es una conexion S3 propia.
+-- Tabla de muestra almacenada en S3 administrado por Unity Catalog.
 CREATE TABLE IF NOT EXISTS actividad_luciana.silver.viajes_demo
 USING DELTA
 COMMENT 'Muestra NYC Taxi; limpiar y tipar para analisis Silver'
